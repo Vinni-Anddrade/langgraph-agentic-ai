@@ -1,0 +1,9 @@
+models: 
+ - llama-3.1-8b-instant
+ - openai/gpt-oss-120b
+ - openai/gpt-oss-20b
+ - groq/compound
+ - gemma2-9b-it
+
+use_case_models:
+  - Basic Chatbot
