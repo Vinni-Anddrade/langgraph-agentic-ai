@@ -7,4 +7,4 @@ class StateSchema(TypedDict):
     It is the State Structure of the graph
     """
 
-    messages: Annotated[list, add_messages]
+    messages: Annotated[List, add_messages]

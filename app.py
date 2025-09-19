@@ -4,7 +4,7 @@ import os
 from dotenv import load_dotenv
 
 from src.agentic_ai.graph.graph_builder import GraphBuilder
-from langchain_core.messages import HumanMessage, AIMessage, SystemMessage
+from langchain_core.messages import AIMessage, SystemMessage
 
 
 def main():
@@ -24,12 +24,12 @@ def main():
     visual = VisualStructure(config_path)
 
     visual.create_title()
-    selected_model, use_case = visual.side_bar()
+    selected_model = visual.side_bar()
 
     visual.message_estructure(st.session_state, st.session_state["model_state"])
 
     graph_manager = GraphBuilder(selected_model)
-    response = graph_manager.execute_graph(st.session_state["model_state"], use_case)
+    response = graph_manager.execute_graph(st.session_state["model_state"])
 
     if response:
         ai_response = response["messages"][-1].content
