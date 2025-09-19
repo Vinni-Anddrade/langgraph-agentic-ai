@@ -37,7 +37,7 @@ class VisualStructure:
         if prompt := st.chat_input("Escreva uma mensagem"):
             model_state.append(HumanMessage(prompt))
             session_state["messages"].append({"role": "user", "content": prompt})
-            st.chat_message("user").markdown(prompt)
+            st.chat_message("user", avatar=self.user_avatar).markdown(prompt)
 
         return model_state
 
